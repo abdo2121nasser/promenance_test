@@ -114,6 +114,8 @@ class GalleryCubit extends Cubit<GalleryState> {
                           imageFile!.path.isNotEmpty &&
                           pickedFilename != null) {
                         await uploadImage();
+                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Upload Succeed')));
+                        await getImages();
                       }
                     },
                     child: ChoiseBlock(
@@ -129,6 +131,8 @@ class GalleryCubit extends Cubit<GalleryState> {
                           imageFile!.path.isNotEmpty &&
                           pickedFilename != null) {
                         await uploadImage();
+                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Upload Succeed')));
+                        await getImages();
                       }
                     },
                     child: ChoiseBlock(

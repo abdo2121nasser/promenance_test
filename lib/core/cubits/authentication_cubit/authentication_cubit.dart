@@ -27,8 +27,10 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       userData = await UserData.fromJson(responce.data);
       FlutterSecureStorage storage = const FlutterSecureStorage();
       await storage.write(key: 'token', value: userData!.token);
+      clearControllers();
       emit(LoginSuccessState());
     } catch (error) {
+      clearControllers();
       emit(LoginErrorState());
       print(error);
     }
@@ -50,5 +52,10 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
       emit(LogoutErrorState());
       print(error);
     }
+  }
+  clearControllers()
+  {
+    email.clear();
+    password.clear();
   }
 }

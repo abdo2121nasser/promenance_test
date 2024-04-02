@@ -12,5 +12,5 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FlutterSecureStorage storage = const FlutterSecureStorage();
   String? token = await storage.read(key: 'token').catchError((error){print(error);});
-  runApp( MyGallery(token: token==null?'':token!,));
+  runApp(MyGallery(token: token==null?'':token!,));
 }

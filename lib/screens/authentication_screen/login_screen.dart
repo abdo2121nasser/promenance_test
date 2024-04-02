@@ -19,29 +19,31 @@ class LoginScreen extends StatelessWidget {
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: Image.asset(ImageConst.kLoginBackGround).image)),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'My',
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35.sp),
-              ),
-              Text(
-                'Gallery',
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 35.sp),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              const LoginBlock()
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'My',
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 35.sp),
+                ),
+                Text(
+                  'Gallery',
+                  style: TextStyle(
+                      color: Colors.black87,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 35.sp),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                const LoginBlock()
+              ],
+            ),
           )),
     );
   }
